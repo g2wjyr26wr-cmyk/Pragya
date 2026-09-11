@@ -1,32 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Secret For Pragya ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #333;
+        }
 
-A LITTLE SECRET FOR PRAGYA ❤️
-Some people just make life feel a little more beautiful.
-And somehow, you're one of those people for me.
-SCROLL FOR SOMETHING SPECIAL
+        /* Floating hearts background */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
 
-FROM RUDRA
-I've thought about how to say this so many times.
+        .heart {
+            position: fixed;
+            font-size: 2rem;
+            opacity: 0.3;
+            pointer-events: none;
+            animation: float 3s ease-in-out infinite;
+        }
 
-But the more I think about it, the more I realize that I don't need a perfect speech.
+        /* Main sections */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
 
-I just want you to know that talking to you can turn a completely normal day into one I remember. Your presence, your little jokes, our conversations — somehow they stay in my head longer than they probably should.
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-I don't know exactly what the future looks like, and I don't want to pretend I do.
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+            color: white;
+        }
 
-I just know that I like having you in my life.
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
 
-And today, I wanted to be brave enough to tell you that. ❤️
-— Rudra
-A FEW THINGS I LOVE
-About having you around.
-01 — Your smile
-It has a way of making even ordinary conversations feel special.
-02 — Our conversations
-Even the random ones somehow become moments I want to remember.
-03 — Just you
-You don't have to try to be special. You already are to me.
-SO HERE GOES...
-Pragya, will you be my girlfriend? ❤️
-Yes, I will ❤️
-Not right now
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+
+        .scroll-hint {
+            margin-top: 3rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .scroll-hint p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Letter Section */
+        .letter {
+            background: linear-gradient(135deg, #ffffff 0%, #f9f7ff 100%);
+            max-width: 700px;
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .letter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+
+        .letter h2 {
+            color: #764ba2;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .letter p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 2rem;
+            color: #764ba2;
+            font-size: 1.2rem;
+        }
+
+        /* Things I Love Section */
+        .things-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .things-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .things-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .things-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .thing {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .thing:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .thing-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .thing-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .thing-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* Question Section */
+        .question {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .question h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
+        }
+
+        .btn-no {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-no:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(20px);
+        }
+
+        /* Response message */
+        .response-message {
+            display: none;
+            font-size: 2rem;
+            margin-top: 2rem;
+            animation: celebrate 0.5s ease-out;
+        }
+
+        @keyframes celebrate {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .letter {
+                padding: 2rem;
+            }
+
+            .things-section h2 {
+                font-size: 2rem;
+            }
+
+            .question h2 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Confetti effect */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+        }
+
+        @keyframes confettiFall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts -->
+    <div class="heart" style="left: 10%; top: 20%; animation-delay: 0s;">❤️</div>
+    <div class="heart" style="left: 90%; top: 30%; animation-delay: 1s;">💕</div>
+    <div class="heart" style="left: 50%; top: 10%; animation-delay: 2s;">💖</div>
+    <div class="heart" style="left: 20%; top: 60%; animation-delay: 1.5s;">💝</div>
+    <div class="heart" style="left: 80%; top: 70%; animation-delay: 0.5s;">💗</div>
+
+    <!-- Hero Section -->
+    <section class="section hero">
+        <div>
+            <h1>✨ A Little Secret For Pragya ❤️ ✨</h1>
+            <p>Some people just make life feel a little more beautiful.</p>
+            <p>And somehow, you're one of those people for me.</p>
+            <div class="scroll-hint">
+                <p>↓ SCROLL FOR SOMETHING SPECIAL ↓</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Letter Section -->
+    <section class="section">
+        <div class="letter">
+            <h2>FROM RUDRA 💌</h2>
+            <p>I've thought about how to say this so many times.</p>
+            <p>But the more I think about it, the more I realize that I don't need a perfect speech.</p>
+            <p>I just want you to know that talking to you can turn a completely normal day into one I remember. Your presence, your little jokes, our conversations — somehow they stay in my head longer than they should.</p>
+            <p>I don't know exactly what the future looks like, and I don't want to pretend I do.</p>
+            <p>I just know that I like having you in my life.</p>
+            <p>And today, I wanted to be brave enough to tell you that. ❤️</p>
+            <div class="signature">— Rudra</div>
+        </div>
+    </section>
+
+    <!-- Things I Love Section -->
+    <section class="section things-section">
+        <div>
+            <h2>A FEW THINGS I LOVE</h2>
+            <p class="things-subtitle">About having you around.</p>
+            <div class="things-container">
+                <div class="thing">
+                    <div class="thing-number">01</div>
+                    <div class="thing-title">Your Smile</div>
+                    <div class="thing-desc">It has a way of making even ordinary conversations feel special.</div>
+                </div>
+                <div class="thing">
+                    <div class="thing-number">02</div>
+                    <div class="thing-title">Our Conversations</div>
+                    <div class="thing-desc">Even the random ones somehow become moments I want to remember.</div>
+                </div>
+                <div class="thing">
+                    <div class="thing-number">03</div>
+                    <div class="thing-title">Just You</div>
+                    <div class="thing-desc">You don't have to try to be special. You already are to me.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Question Section -->
+    <section class="section question">
+        <div>
+            <h2>SO HERE GOES...</h2>
+            <h1 style="font-size: 2.5rem; margin-bottom: 2rem;">Pragya, will you be my girlfriend? ❤️</h1>
+            <div class="buttons-container">
+                <button class="btn btn-yes" onclick="handleYes()">Yes, I Will ❤️</button>
+                <button class="btn btn-no" onclick="handleNo()">Not Right Now</button>
+            </div>
+            <div class="response-message" id="response"></div>
+        </div>
+    </section>
+
+    <script>
+        function handleYes() {
+            const response = document.getElementById('response');
+            response.textContent = '🎉 You just made me the happiest person! 🎉';
+            response.style.display = 'block';
+            createConfetti();
+        }
+
+        function handleNo() {
+            alert('That\'s okay! The door is always open. 💕');
+        }
+
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = ['#f093fb', '#f5576c', '#667eea', '#764ba2', '#FFD700'][Math.floor(Math.random() * 5)];
+                confetti.style.animation = `confettiFall ${2 + Math.random() * 1}s linear forwards`;
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
